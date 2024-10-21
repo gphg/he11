@@ -81,8 +81,8 @@ end)
 -- remove entities when they go out of bounds
 
 local boundaryMargin = 64
-local windowHeight = love.window.getHeight()
-local windowWidth = love.window.getWidth()
+local windowHeight = love.graphics.getHeight()
+local windowWidth = love.graphics.getWidth()
 
 Motion.boundaryRemoval = System(
 { 'position' },
