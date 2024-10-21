@@ -56,6 +56,13 @@ function Scene:load (level, entities)
         end
     end)
 
+    -- emulate the key press, specifically on mobile device
+    self:on('touchpressed', function(_, _, _, _, _, pressure)
+        if pressure == 1 then
+            self:dispatch('keypressed', 'p')
+        end
+    end)
+
 end
 
 return Scene

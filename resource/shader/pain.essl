@@ -1,0 +1,13 @@
+precision mediump float;
+
+vec4 effect(vec4 color, sampler2D texture, vec2 texturePos, vec2 screenPos) {
+  // Sample the texture using texture2D
+  vec4 c = texture2D(texture, texturePos);
+
+  c.r += color.r;
+  c.g -= color.r;  // Note: using c.bg is not supported in GLSL ES 1.00
+  c.b -= color.r;  // Achieve similar effect by subtracting from both g and b
+  c.a *= color.a;
+
+  return c;
+}
