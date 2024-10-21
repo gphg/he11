@@ -16,6 +16,10 @@ function Scene:on (name, callback)
     return handler
 end
 
+function Scene:dispatch (name, ...)
+    return Event.dispatch(name, ...)
+end
+
 function Scene:removeHandlers ()
     for handler in pairs(self.handlers) do
         handler:remove()

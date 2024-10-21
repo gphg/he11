@@ -14,8 +14,8 @@ setmetatable(_G, {
 
 local Event = require 'lib.knife.event'
 
-Event.injectDispatchers(love.handlers)
-Event.injectDispatchers(love, { 'update', 'draw' })
+Event.hook(love.handlers)
+Event.hook(love, { 'update', 'draw' })
 
 -- press f12 to toggle debug mode
 
