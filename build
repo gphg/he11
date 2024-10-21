@@ -1,3 +1,8 @@
+#!/usr/bin/env sh
+
+git submodule sync --recursive
+git submodule update --init --force --recursive
+
 atlas='resource/atlas.lua'
 
 echo 'return {' > $atlas
@@ -9,4 +14,6 @@ xmlstarlet sel -T -t -m '//svg:rect[starts-with(@id,"sprite.")]' \
 -o ", height = " -v "@height" -o " }, " -n >> $atlas
 echo '}' >> $atlas
 
-rm ../hell.love; zip -r ../hell.love . -x *.git* -x fuse
+rm ../hell.love
+zip -9r ../hell.love . -x *.git* -x fuse -x build -x */test \
+-x '*/.*' -x '*/spec/*' -x '*/readme/*' -x *.svgz -x *.out
