@@ -21,7 +21,7 @@ local spriteScale = 0.5
 Draw.sprite = System(
 { 'position', 'name', '_entity' },
 function (p, name, entity, spriteBatch)
-    
+
     if entity.isInvisible then return end
 
     -- local image, width, height = getSprite(name)

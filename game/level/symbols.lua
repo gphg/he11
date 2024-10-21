@@ -74,7 +74,7 @@ return function ()
         end,
 
         -- laser turret southwest
-        ['<L'] = function (x, y)
+        ['<L'] = function (entities, x, y)
             spawn(entities, Entity('turret.laser', x, y,  -1, 1))
         end,
 

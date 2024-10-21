@@ -11,9 +11,9 @@ xmlstarlet sel -T -t -m '//svg:rect[starts-with(@id,"sprite.")]' \
 -o "['" -v "substring-after(@id, 'sprite.')" \
 -o "'] = { x = " -v "@x" -o ", y = " -v "@y" \
 -o ", width = " -v "@width" \
--o ", height = " -v "@height" -o " }, " -n >> $atlas
+-o ", height = " -v "@height" -o " }," -n >> $atlas
 echo '}' >> $atlas
 
 rm ../hell.love
 zip -9r ../hell.love . -x *.git* -x fuse -x build -x */test \
--x '*/.*' -x '*/spec/*' -x '*/readme/*' -x *.svgz -x *.out
+-x '*/.*' -x '*/spec/*' -x '*/readme/*' -x 'lib/*.png' -x *.svgz -x *.out
